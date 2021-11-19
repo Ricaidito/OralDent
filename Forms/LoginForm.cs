@@ -24,8 +24,8 @@ namespace OralDent
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            string user = userTb.Text;
-            string pass = passTb.Text;
+            string user = userTb.Text == string.Empty ? "x" : userTb.Text;
+            string pass = passTb.Text == string.Empty ? "y" : passTb.Text;
 
             MessageBox.Show($"{user} ha iniciado sesión con la contraseña: {pass}");
         }
