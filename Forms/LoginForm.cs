@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OralDent.Forms;
 
 namespace OralDent
 {
@@ -28,6 +29,9 @@ namespace OralDent
             string pass = passTb.Text == string.Empty ? "y" : passTb.Text;
 
             MessageBox.Show($"{user} ha iniciado sesión con la contraseña: {pass}");
+
+            var menuForm = new MenuForm(user);
+            menuForm.ShowDialog();
         }
     }
 }

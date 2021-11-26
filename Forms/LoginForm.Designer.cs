@@ -80,6 +80,7 @@
             // 
             this.userTb.Location = new System.Drawing.Point(12, 108);
             this.userTb.Name = "userTb";
+            this.userTb.PlaceholderText = "Usuario...";
             this.userTb.Size = new System.Drawing.Size(125, 27);
             this.userTb.TabIndex = 4;
             // 
@@ -87,6 +88,8 @@
             // 
             this.passTb.Location = new System.Drawing.Point(12, 181);
             this.passTb.Name = "passTb";
+            this.passTb.PasswordChar = '*';
+            this.passTb.PlaceholderText = "Contraseña...";
             this.passTb.Size = new System.Drawing.Size(125, 27);
             this.passTb.TabIndex = 5;
             // 
