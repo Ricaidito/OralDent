@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OralDent.Forms;
+using OralDent.Utils;
 
 namespace OralDent
 {
@@ -25,13 +26,22 @@ namespace OralDent
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            string user = userTb.Text == string.Empty ? "x" : userTb.Text;
-            string pass = passTb.Text == string.Empty ? "y" : passTb.Text;
+            string user = userTb.Text;
+            string pass = passTb.Text;
 
-            MessageBox.Show($"{user} ha iniciado sesión con la contraseña: {pass}");
+            if (DBUtils.CheckCredentials(user, pass))
+            {
+                MessageBox.Show("Se ha iniciado sesión!");
+                var menuForm = new MenuForm(DBUtils.GetName(user));
+                menuForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Credenciales incorrectas!");
+                userTb.Clear();
+                passTb.Clear();
+            }
 
-            var menuForm = new MenuForm(user);
-            menuForm.ShowDialog();
         }
     }
 }
