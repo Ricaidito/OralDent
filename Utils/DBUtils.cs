@@ -1,25 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data.SqlClient;
 
 namespace OralDent.Utils
 {
     public static class DBUtils
     {
-        private static string cString = ConfigurationManager.ConnectionStrings["cString"].ConnectionString;
-        private static SqlConnection con;
+        private static string cString = ConfigurationManager
+            .ConnectionStrings["cString"]
+            .ConnectionString;
 
         public static bool CheckCredentials(string user, string pass)
         {
             bool check = false;
-            using(con = new SqlConnection(cString))
+
+            using(var con = new SqlConnection(cString))
             {
-                string query = $"SELECT Usuario, Clave from Usuarios WHERE Usuario = '{user}' AND Clave = '{pass}';";
-                using(SqlCommand cmd = new SqlCommand(query, con))
+
+                string query = $"SELECT Usuario, Clave from Usuarios WHERE Usuario = @user AND Clave = @pass;";
+
+                using(var cmd = new SqlCommand(query, con))
                 {
                     con.Open();
+
+                    cmd.Parameters.AddWithValue("user", user);
+                    cmd.Parameters.AddWithValue("pass", pass);
+
                     SqlDataReader r = cmd.ExecuteReader();
                     r.Read();
 
@@ -31,26 +36,36 @@ namespace OralDent.Utils
                     else
                         check = false;
                 }
+
             }
+
             return check;
         }
 
         public static string GetName(string user)
         {
-            string result = string.Empty;
-            using (con = new SqlConnection(cString))
+            string name = string.Empty;
+
+            using (var con = new SqlConnection(cString))
             {
-                string query = $"SELECT Nombre FROM Usuarios WHERE Usuario = '{user}';";
-                using (SqlCommand cmd = new SqlCommand(query, con))
+
+                string query = $"SELECT Nombre FROM Usuarios WHERE Usuario = @user;";
+
+                using (var cmd = new SqlCommand(query, con))
                 {
                     con.Open();
+
+                    cmd.Parameters.AddWithValue("user", user);
+
                     SqlDataReader r = cmd.ExecuteReader();
                     r.Read();
-                    result = r["Nombre"].ToString();
-                }
-            }
-            return result;
-        }
 
+                    name = r["Nombre"].ToString();
+                }
+
+            }
+
+            return name;
+        }
     }
 }

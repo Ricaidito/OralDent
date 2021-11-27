@@ -1,23 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace OralDent.Forms
 {
     public partial class MenuForm : Form
     {
+        private LoginForm loginForm;
 
-        public string userName;
-
-        public MenuForm(string name)
+        public MenuForm(string name, LoginForm login)
         {
             InitializeComponent();
-            userName = name;
+            loginForm = login;
             welcomeLabel.Text = $"Bienvenid@ {name}!";
+        }
+
+        private void MenuForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            loginForm.Show();
         }
     }
 }

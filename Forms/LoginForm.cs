@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using OralDent.Forms;
 using OralDent.Utils;
@@ -14,6 +7,8 @@ namespace OralDent
 {
     public partial class LoginForm : Form
     {
+        private MenuForm menuForm;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -31,17 +26,25 @@ namespace OralDent
 
             if (DBUtils.CheckCredentials(user, pass))
             {
+                ClearInputs();
+                Hide();
                 MessageBox.Show("Se ha iniciado sesión!");
-                var menuForm = new MenuForm(DBUtils.GetName(user));
-                menuForm.ShowDialog();
+                menuForm = new MenuForm(DBUtils.GetName(user), this);
+                menuForm.Show();
+
             }
             else
             {
                 MessageBox.Show("Credenciales incorrectas!");
-                userTb.Clear();
-                passTb.Clear();
+                ClearInputs();
             }
 
+        }
+
+        private void ClearInputs()
+        {
+            userTb.Clear();
+            passTb.Clear();
         }
     }
 }

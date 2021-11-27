@@ -33,7 +33,6 @@
             this.pacientesBtn = new System.Windows.Forms.Button();
             this.dentistaBtn = new System.Windows.Forms.Button();
             this.servicioBtn = new System.Windows.Forms.Button();
-            this.exitMenuBtn = new System.Windows.Forms.Button();
             this.facturaBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -66,7 +65,7 @@
             // 
             // dentistaBtn
             // 
-            this.dentistaBtn.Location = new System.Drawing.Point(131, 88);
+            this.dentistaBtn.Location = new System.Drawing.Point(112, 88);
             this.dentistaBtn.Name = "dentistaBtn";
             this.dentistaBtn.Size = new System.Drawing.Size(94, 29);
             this.dentistaBtn.TabIndex = 3;
@@ -75,25 +74,16 @@
             // 
             // servicioBtn
             // 
-            this.servicioBtn.Location = new System.Drawing.Point(12, 138);
+            this.servicioBtn.Location = new System.Drawing.Point(12, 123);
             this.servicioBtn.Name = "servicioBtn";
             this.servicioBtn.Size = new System.Drawing.Size(94, 29);
             this.servicioBtn.TabIndex = 4;
             this.servicioBtn.Text = "Servicios";
             this.servicioBtn.UseVisualStyleBackColor = true;
             // 
-            // exitMenuBtn
-            // 
-            this.exitMenuBtn.Location = new System.Drawing.Point(12, 191);
-            this.exitMenuBtn.Name = "exitMenuBtn";
-            this.exitMenuBtn.Size = new System.Drawing.Size(94, 29);
-            this.exitMenuBtn.TabIndex = 5;
-            this.exitMenuBtn.Text = "Salir";
-            this.exitMenuBtn.UseVisualStyleBackColor = true;
-            // 
             // facturaBtn
             // 
-            this.facturaBtn.Location = new System.Drawing.Point(131, 138);
+            this.facturaBtn.Location = new System.Drawing.Point(112, 123);
             this.facturaBtn.Name = "facturaBtn";
             this.facturaBtn.Size = new System.Drawing.Size(121, 29);
             this.facturaBtn.TabIndex = 7;
@@ -104,9 +94,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(315, 249);
+            this.ClientSize = new System.Drawing.Size(315, 176);
             this.Controls.Add(this.facturaBtn);
-            this.Controls.Add(this.exitMenuBtn);
             this.Controls.Add(this.servicioBtn);
             this.Controls.Add(this.dentistaBtn);
             this.Controls.Add(this.pacientesBtn);
@@ -114,6 +103,7 @@
             this.Controls.Add(this.welcomeLabel);
             this.Name = "MenuForm";
             this.Text = "OralDent - Menu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +116,6 @@
         private System.Windows.Forms.Button pacientesBtn;
         private System.Windows.Forms.Button dentistaBtn;
         private System.Windows.Forms.Button servicioBtn;
-        private System.Windows.Forms.Button exitMenuBtn;
         private System.Windows.Forms.Button facturaBtn;
     }
 }
