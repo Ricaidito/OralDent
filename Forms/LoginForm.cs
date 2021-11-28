@@ -23,14 +23,11 @@ namespace OralDent
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            string user = userTb.Text;
-            string pass = passTb.Text;
-
-            if (DBUtils.CheckCredentials(user, pass))
+            if (DBUtils.CheckCredentials(userTb.Text, passTb.Text))
             {
                 ClearInputs();
                 Hide();
-                menuForm = new MenuForm(DBUtils.GetName(user), this);
+                menuForm = new MenuForm(DBUtils.GetName(userTb.Text), this);
                 menuForm.Show();
 
             }
@@ -39,7 +36,6 @@ namespace OralDent
                 MessageBox.Show("Credenciales incorrectas!");
                 ClearInputs();
             }
-
         }
 
         private void ClearInputs()

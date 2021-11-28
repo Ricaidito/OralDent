@@ -1,4 +1,5 @@
 ﻿using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace OralDent.Utils
@@ -8,6 +9,25 @@ namespace OralDent.Utils
         private static string cString = ConfigurationManager
             .ConnectionStrings["cString"]
             .ConnectionString;
+
+        public static DataTable GetTable(string table)
+        {
+            DataTable dt = new DataTable();
+
+            using (var con = new SqlConnection(cString))
+            {
+                string query = $"SELECT * FROM {table};";
+
+                using (var cmd = new SqlCommand(query, con))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(dt);
+                }
+
+            }
+
+            return dt;
+        }
 
         public static bool CheckCredentials(string user, string pass)
         {
@@ -114,5 +134,6 @@ namespace OralDent.Utils
                 }
             }
         }
+
     }
 }

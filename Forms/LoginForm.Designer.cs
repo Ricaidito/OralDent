@@ -76,7 +76,7 @@
             // 
             // loginBtn
             // 
-            this.loginBtn.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.loginBtn.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.loginBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.loginBtn.Location = new System.Drawing.Point(280, 301);
             this.loginBtn.Name = "loginBtn";

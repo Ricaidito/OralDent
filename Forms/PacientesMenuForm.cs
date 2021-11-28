@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using OralDent.Utils;
 
 namespace OralDent.Forms
 {
@@ -48,6 +49,11 @@ namespace OralDent.Forms
         private void updatePacienteBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void PacientesMenuForm_Load(object sender, EventArgs e)
+        {
+            dataGVPacientes.DataSource = DBUtils.GetTable("Paciente");
         }
     }
 }

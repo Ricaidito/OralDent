@@ -48,8 +48,8 @@
             this.ageTb = new System.Windows.Forms.TextBox();
             this.telTb = new System.Windows.Forms.TextBox();
             this.tipoPacienteDropdown = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGVPacientes = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVPacientes)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -252,15 +252,17 @@
             this.tipoPacienteDropdown.Size = new System.Drawing.Size(216, 28);
             this.tipoPacienteDropdown.TabIndex = 6;
             // 
-            // dataGridView1
+            // dataGVPacientes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(270, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(621, 414);
-            this.dataGridView1.TabIndex = 26;
+            this.dataGVPacientes.BackgroundColor = System.Drawing.Color.PaleTurquoise;
+            this.dataGVPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGVPacientes.GridColor = System.Drawing.SystemColors.WindowFrame;
+            this.dataGVPacientes.Location = new System.Drawing.Point(270, 43);
+            this.dataGVPacientes.Name = "dataGVPacientes";
+            this.dataGVPacientes.RowHeadersWidth = 51;
+            this.dataGVPacientes.RowTemplate.Height = 29;
+            this.dataGVPacientes.Size = new System.Drawing.Size(621, 414);
+            this.dataGVPacientes.TabIndex = 26;
             // 
             // PacientesMenuForm
             // 
@@ -268,7 +270,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkTurquoise;
             this.ClientSize = new System.Drawing.Size(933, 646);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGVPacientes);
             this.Controls.Add(this.tipoPacienteDropdown);
             this.Controls.Add(this.telTb);
             this.Controls.Add(this.ageTb);
@@ -292,7 +294,8 @@
             this.Name = "PacientesMenuForm";
             this.Text = "OralDent - Pacientes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PacientesMenuForm_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.PacientesMenuForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVPacientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,6 +323,6 @@
         private System.Windows.Forms.TextBox ageTb;
         private System.Windows.Forms.TextBox telTb;
         private System.Windows.Forms.ComboBox tipoPacienteDropdown;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGVPacientes;
     }
 }

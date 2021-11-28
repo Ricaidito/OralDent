@@ -66,10 +66,10 @@
             // 
             this.pacientesBtn.BackColor = System.Drawing.Color.PaleTurquoise;
             this.pacientesBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.pacientesBtn.Location = new System.Drawing.Point(12, 295);
+            this.pacientesBtn.Location = new System.Drawing.Point(12, 175);
             this.pacientesBtn.Name = "pacientesBtn";
             this.pacientesBtn.Size = new System.Drawing.Size(337, 54);
-            this.pacientesBtn.TabIndex = 3;
+            this.pacientesBtn.TabIndex = 1;
             this.pacientesBtn.Text = "Pacientes";
             this.pacientesBtn.UseVisualStyleBackColor = false;
             this.pacientesBtn.Click += new System.EventHandler(this.pacientesBtn_Click);
@@ -78,10 +78,10 @@
             // 
             this.dentistaBtn.BackColor = System.Drawing.Color.PaleTurquoise;
             this.dentistaBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dentistaBtn.Location = new System.Drawing.Point(12, 415);
+            this.dentistaBtn.Location = new System.Drawing.Point(12, 235);
             this.dentistaBtn.Name = "dentistaBtn";
             this.dentistaBtn.Size = new System.Drawing.Size(337, 54);
-            this.dentistaBtn.TabIndex = 6;
+            this.dentistaBtn.TabIndex = 2;
             this.dentistaBtn.Text = "Dentistas";
             this.dentistaBtn.UseVisualStyleBackColor = false;
             // 
@@ -89,21 +89,21 @@
             // 
             this.servicioBtn.BackColor = System.Drawing.Color.PaleTurquoise;
             this.servicioBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.servicioBtn.Location = new System.Drawing.Point(12, 235);
+            this.servicioBtn.Location = new System.Drawing.Point(12, 355);
             this.servicioBtn.Name = "servicioBtn";
             this.servicioBtn.Size = new System.Drawing.Size(337, 54);
-            this.servicioBtn.TabIndex = 2;
+            this.servicioBtn.TabIndex = 4;
             this.servicioBtn.Text = "Servicios";
             this.servicioBtn.UseVisualStyleBackColor = false;
             // 
             // facturaBtn
             // 
-            this.facturaBtn.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.facturaBtn.BackColor = System.Drawing.Color.SandyBrown;
             this.facturaBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.facturaBtn.Location = new System.Drawing.Point(12, 175);
+            this.facturaBtn.Location = new System.Drawing.Point(12, 415);
             this.facturaBtn.Name = "facturaBtn";
             this.facturaBtn.Size = new System.Drawing.Size(337, 54);
-            this.facturaBtn.TabIndex = 1;
+            this.facturaBtn.TabIndex = 5;
             this.facturaBtn.Text = "Generar factura";
             this.facturaBtn.UseVisualStyleBackColor = false;
             // 
@@ -122,10 +122,10 @@
             // 
             this.asistBtn.BackColor = System.Drawing.Color.PaleTurquoise;
             this.asistBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.asistBtn.Location = new System.Drawing.Point(12, 355);
+            this.asistBtn.Location = new System.Drawing.Point(12, 295);
             this.asistBtn.Name = "asistBtn";
             this.asistBtn.Size = new System.Drawing.Size(337, 54);
-            this.asistBtn.TabIndex = 5;
+            this.asistBtn.TabIndex = 3;
             this.asistBtn.Text = "Asistentes";
             this.asistBtn.UseVisualStyleBackColor = false;
             // 
@@ -133,7 +133,7 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = global::OralDent.Properties.Resources.OralDent;
-            this.pictureBox1.Location = new System.Drawing.Point(415, 138);
+            this.pictureBox1.Location = new System.Drawing.Point(427, 128);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(310, 300);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -145,7 +145,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.ClientSize = new System.Drawing.Size(777, 534);
+            this.ClientSize = new System.Drawing.Size(777, 506);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.asistBtn);
             this.Controls.Add(this.consultaBtn);
