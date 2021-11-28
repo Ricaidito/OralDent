@@ -12,8 +12,6 @@ namespace OralDent
         public LoginForm()
         {
             InitializeComponent();
-            //DBUtils.AddPaciente("test", "test", "test", "test", 25, "000", "si");
-            //DBUtils.DeletePaciente(2);
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -25,9 +23,9 @@ namespace OralDent
         {
             if (DBUtils.CheckCredentials(userTb.Text, passTb.Text))
             {
+                menuForm = new MenuForm(DBUtils.GetName(userTb.Text), this);
                 ClearInputs();
                 Hide();
-                menuForm = new MenuForm(DBUtils.GetName(userTb.Text), this);
                 menuForm.Show();
 
             }

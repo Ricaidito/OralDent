@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.optionsLabel = new System.Windows.Forms.Label();
             this.pacientesBtn = new System.Windows.Forms.Button();
@@ -155,6 +156,7 @@
             this.Controls.Add(this.pacientesBtn);
             this.Controls.Add(this.optionsLabel);
             this.Controls.Add(this.welcomeLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuForm";
             this.Text = "OralDent - Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuForm_FormClosing);

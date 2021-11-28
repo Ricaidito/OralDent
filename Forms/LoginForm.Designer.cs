@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.loginLabel = new System.Windows.Forms.Label();
             this.passLabel = new System.Windows.Forms.Label();
             this.exitBtn = new System.Windows.Forms.Button();
@@ -151,6 +152,7 @@
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.passLabel);
             this.Controls.Add(this.loginLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.Text = "OralDent - Login";
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).EndInit();
