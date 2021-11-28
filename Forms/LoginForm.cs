@@ -30,7 +30,6 @@ namespace OralDent
             {
                 ClearInputs();
                 Hide();
-                MessageBox.Show("Se ha iniciado sesión!");
                 menuForm = new MenuForm(DBUtils.GetName(user), this);
                 menuForm.Show();
 

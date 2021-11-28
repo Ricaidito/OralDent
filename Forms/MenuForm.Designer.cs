@@ -34,90 +34,121 @@
             this.dentistaBtn = new System.Windows.Forms.Button();
             this.servicioBtn = new System.Windows.Forms.Button();
             this.facturaBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.consultaBtn = new System.Windows.Forms.Button();
+            this.asistBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // welcomeLabel
             // 
             this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.welcomeLabel.Font = new System.Drawing.Font("JetBrains Mono", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.welcomeLabel.Location = new System.Drawing.Point(12, 25);
             this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(88, 20);
+            this.welcomeLabel.Size = new System.Drawing.Size(153, 30);
             this.welcomeLabel.TabIndex = 0;
             this.welcomeLabel.Text = "Bienvenid@";
             // 
             // optionsLabel
             // 
             this.optionsLabel.AutoSize = true;
+            this.optionsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.optionsLabel.Font = new System.Drawing.Font("JetBrains Mono", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.optionsLabel.Location = new System.Drawing.Point(12, 65);
             this.optionsLabel.Name = "optionsLabel";
-            this.optionsLabel.Size = new System.Drawing.Size(74, 20);
+            this.optionsLabel.Size = new System.Drawing.Size(139, 30);
             this.optionsLabel.TabIndex = 1;
             this.optionsLabel.Text = "Opciones:";
             // 
             // pacientesBtn
             // 
-            this.pacientesBtn.Location = new System.Drawing.Point(12, 88);
+            this.pacientesBtn.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.pacientesBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pacientesBtn.Location = new System.Drawing.Point(12, 295);
             this.pacientesBtn.Name = "pacientesBtn";
-            this.pacientesBtn.Size = new System.Drawing.Size(94, 29);
-            this.pacientesBtn.TabIndex = 2;
+            this.pacientesBtn.Size = new System.Drawing.Size(337, 54);
+            this.pacientesBtn.TabIndex = 3;
             this.pacientesBtn.Text = "Pacientes";
-            this.pacientesBtn.UseVisualStyleBackColor = true;
+            this.pacientesBtn.UseVisualStyleBackColor = false;
             this.pacientesBtn.Click += new System.EventHandler(this.pacientesBtn_Click);
             // 
             // dentistaBtn
             // 
-            this.dentistaBtn.Location = new System.Drawing.Point(121, 88);
+            this.dentistaBtn.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.dentistaBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dentistaBtn.Location = new System.Drawing.Point(12, 415);
             this.dentistaBtn.Name = "dentistaBtn";
-            this.dentistaBtn.Size = new System.Drawing.Size(94, 29);
-            this.dentistaBtn.TabIndex = 3;
+            this.dentistaBtn.Size = new System.Drawing.Size(337, 54);
+            this.dentistaBtn.TabIndex = 6;
             this.dentistaBtn.Text = "Dentistas";
-            this.dentistaBtn.UseVisualStyleBackColor = true;
+            this.dentistaBtn.UseVisualStyleBackColor = false;
             // 
             // servicioBtn
             // 
-            this.servicioBtn.Location = new System.Drawing.Point(12, 123);
+            this.servicioBtn.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.servicioBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.servicioBtn.Location = new System.Drawing.Point(12, 235);
             this.servicioBtn.Name = "servicioBtn";
-            this.servicioBtn.Size = new System.Drawing.Size(94, 29);
-            this.servicioBtn.TabIndex = 4;
+            this.servicioBtn.Size = new System.Drawing.Size(337, 54);
+            this.servicioBtn.TabIndex = 2;
             this.servicioBtn.Text = "Servicios";
-            this.servicioBtn.UseVisualStyleBackColor = true;
+            this.servicioBtn.UseVisualStyleBackColor = false;
             // 
             // facturaBtn
             // 
-            this.facturaBtn.Location = new System.Drawing.Point(112, 123);
+            this.facturaBtn.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.facturaBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.facturaBtn.Location = new System.Drawing.Point(12, 175);
             this.facturaBtn.Name = "facturaBtn";
-            this.facturaBtn.Size = new System.Drawing.Size(121, 29);
-            this.facturaBtn.TabIndex = 7;
+            this.facturaBtn.Size = new System.Drawing.Size(337, 54);
+            this.facturaBtn.TabIndex = 1;
             this.facturaBtn.Text = "Generar factura";
-            this.facturaBtn.UseVisualStyleBackColor = true;
+            this.facturaBtn.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // consultaBtn
             // 
-            this.button1.Location = new System.Drawing.Point(239, 123);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Consultas";
-            this.button1.UseVisualStyleBackColor = true;
+            this.consultaBtn.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.consultaBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.consultaBtn.Location = new System.Drawing.Point(12, 115);
+            this.consultaBtn.Name = "consultaBtn";
+            this.consultaBtn.Size = new System.Drawing.Size(337, 54);
+            this.consultaBtn.TabIndex = 0;
+            this.consultaBtn.Text = "Consultas";
+            this.consultaBtn.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // asistBtn
             // 
-            this.button2.Location = new System.Drawing.Point(231, 88);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Asistentes";
-            this.button2.UseVisualStyleBackColor = true;
+            this.asistBtn.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.asistBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.asistBtn.Location = new System.Drawing.Point(12, 355);
+            this.asistBtn.Name = "asistBtn";
+            this.asistBtn.Size = new System.Drawing.Size(337, 54);
+            this.asistBtn.TabIndex = 5;
+            this.asistBtn.Text = "Asistentes";
+            this.asistBtn.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = global::OralDent.Properties.Resources.OralDent;
+            this.pictureBox1.Location = new System.Drawing.Point(415, 138);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(310, 300);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 187);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.ClientSize = new System.Drawing.Size(777, 534);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.asistBtn);
+            this.Controls.Add(this.consultaBtn);
             this.Controls.Add(this.facturaBtn);
             this.Controls.Add(this.servicioBtn);
             this.Controls.Add(this.dentistaBtn);
@@ -127,6 +158,7 @@
             this.Name = "MenuForm";
             this.Text = "OralDent - Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuForm_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,7 +172,8 @@
         private System.Windows.Forms.Button dentistaBtn;
         private System.Windows.Forms.Button servicioBtn;
         private System.Windows.Forms.Button facturaBtn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button consultaBtn;
+        private System.Windows.Forms.Button asistBtn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

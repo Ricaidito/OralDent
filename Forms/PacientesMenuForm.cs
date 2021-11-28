@@ -1,26 +1,53 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace OralDent.Forms
 {
     public partial class PacientesMenuForm : Form
     {
-        private MenuForm menu;
+        private MenuForm lastForm;
 
         public PacientesMenuForm(MenuForm lastMenu)
         {
             InitializeComponent();
-            menu = lastMenu;
+            lastForm = lastMenu;
         }
 
         private void PacientesMenuForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            menu.Show();
+            lastForm.Show();
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+            lastForm.Show();
+        }
+
+        private void clearBoxBtn_Click(object sender, EventArgs e)
+        {
+            nameTb.Clear();
+            lastTb.Clear();
+            cedulaTb.Clear();
+            emailTb.Clear();
+            ageTb.Clear();
+            telTb.Clear();
+            tipoPacienteDropdown.SelectedIndex = -1;
+        }
+
+        private void agregarPacienteBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eliminarPacienteBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updatePacienteBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
