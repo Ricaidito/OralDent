@@ -34,6 +34,8 @@
             this.dentistaBtn = new System.Windows.Forms.Button();
             this.servicioBtn = new System.Windows.Forms.Button();
             this.facturaBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // welcomeLabel
@@ -62,10 +64,11 @@
             this.pacientesBtn.TabIndex = 2;
             this.pacientesBtn.Text = "Pacientes";
             this.pacientesBtn.UseVisualStyleBackColor = true;
+            this.pacientesBtn.Click += new System.EventHandler(this.pacientesBtn_Click);
             // 
             // dentistaBtn
             // 
-            this.dentistaBtn.Location = new System.Drawing.Point(112, 88);
+            this.dentistaBtn.Location = new System.Drawing.Point(121, 88);
             this.dentistaBtn.Name = "dentistaBtn";
             this.dentistaBtn.Size = new System.Drawing.Size(94, 29);
             this.dentistaBtn.TabIndex = 3;
@@ -90,11 +93,31 @@
             this.facturaBtn.Text = "Generar factura";
             this.facturaBtn.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(239, 123);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Consultas";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(231, 88);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 29);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Asistentes";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(315, 176);
+            this.ClientSize = new System.Drawing.Size(358, 187);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.facturaBtn);
             this.Controls.Add(this.servicioBtn);
             this.Controls.Add(this.dentistaBtn);
@@ -117,5 +140,7 @@
         private System.Windows.Forms.Button dentistaBtn;
         private System.Windows.Forms.Button servicioBtn;
         private System.Windows.Forms.Button facturaBtn;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

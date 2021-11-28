@@ -12,6 +12,8 @@ namespace OralDent
         public LoginForm()
         {
             InitializeComponent();
+            //DBUtils.AddPaciente("test", "test", "test", "test", 25, "000", "si");
+            //DBUtils.DeletePaciente(2);
         }
 
         private void exitBtn_Click(object sender, EventArgs e)

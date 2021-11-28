@@ -10,9 +10,17 @@ namespace OralDent.Forms
 {
     public partial class PacientesMenuForm : Form
     {
-        public PacientesMenuForm()
+        private MenuForm menu;
+
+        public PacientesMenuForm(MenuForm lastMenu)
         {
             InitializeComponent();
+            menu = lastMenu;
+        }
+
+        private void PacientesMenuForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            menu.Show();
         }
     }
 }
