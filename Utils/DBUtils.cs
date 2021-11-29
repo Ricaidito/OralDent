@@ -6,9 +6,13 @@ namespace OralDent.Utils
 {
     public static class DBUtils
     {
+        // ConnectionString en App.config
+
         private static string cString = ConfigurationManager
             .ConnectionStrings["cString"]
             .ConnectionString;
+
+        // Utilidades
 
         public static DataTable GetTable(string table)
         {
@@ -88,6 +92,31 @@ namespace OralDent.Utils
             return name;
         }
 
+        // Paciente
+
+        public static bool CheckIfPacienteExist(int id)
+        {
+            using (var con = new SqlConnection(cString))
+            {
+
+                string query = "SELECT Nombre FROM Paciente WHERE IdPaciente = @id;";
+
+                using (var cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("id", id);
+
+                    con.Open();
+
+                    SqlDataReader r = cmd.ExecuteReader();
+
+                    if (r.HasRows)
+                        return true;
+                    return false;
+                }
+
+            }
+        }
+
         public static void AddPaciente(
             string name, 
             string lastName, 
@@ -129,6 +158,46 @@ namespace OralDent.Utils
                 using (var cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("id", id);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void UpdatePaciente(
+            int id,
+            string name,
+            string lastName,
+            string cedula,
+            string email,
+            int age,
+            string phone,
+            string tipoPaciente
+            )
+        {
+            using (var con = new SqlConnection(cString))
+            {
+                string query = @"UPDATE Paciente SET 
+                    Nombre = @name, 
+                    Apellido = @lastName, 
+                    Cedula = @cedula, 
+                    Correo = @correo, 
+                    Edad = @edad, 
+                    Telefono = @tel, 
+                    TipoPaciente = @tipoPaciente 
+                    WHERE IdPaciente = @id;";
+
+                using(var cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("id", id);
+                    cmd.Parameters.AddWithValue("name", name);
+                    cmd.Parameters.AddWithValue("lastName", lastName);
+                    cmd.Parameters.AddWithValue("cedula", cedula);
+                    cmd.Parameters.AddWithValue("correo", email);
+                    cmd.Parameters.AddWithValue("edad", age);
+                    cmd.Parameters.AddWithValue("tel", phone);
+                    cmd.Parameters.AddWithValue("tipoPaciente", tipoPaciente);
+
                     con.Open();
                     cmd.ExecuteNonQuery();
                 }

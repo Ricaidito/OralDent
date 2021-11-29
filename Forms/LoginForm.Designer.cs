@@ -90,6 +90,7 @@
             // userTb
             // 
             this.userTb.Location = new System.Drawing.Point(12, 157);
+            this.userTb.MaxLength = 12;
             this.userTb.Name = "userTb";
             this.userTb.PlaceholderText = "Ingrese su usuario...";
             this.userTb.Size = new System.Drawing.Size(161, 27);
@@ -98,6 +99,7 @@
             // passTb
             // 
             this.passTb.Location = new System.Drawing.Point(12, 233);
+            this.passTb.MaxLength = 12;
             this.passTb.Name = "passTb";
             this.passTb.PasswordChar = '*';
             this.passTb.PlaceholderText = "Ingrese su contraseña...";

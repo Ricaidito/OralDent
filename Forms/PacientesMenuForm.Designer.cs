@@ -50,6 +50,8 @@
             this.telTb = new System.Windows.Forms.TextBox();
             this.tipoPacienteDropdown = new System.Windows.Forms.ComboBox();
             this.dataGVPacientes = new System.Windows.Forms.DataGridView();
+            this.idLabel = new System.Windows.Forms.Label();
+            this.idTb = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVPacientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +69,7 @@
             // 
             this.agregarPacienteBtn.BackColor = System.Drawing.Color.PaleTurquoise;
             this.agregarPacienteBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.agregarPacienteBtn.Location = new System.Drawing.Point(12, 497);
+            this.agregarPacienteBtn.Location = new System.Drawing.Point(45, 492);
             this.agregarPacienteBtn.Name = "agregarPacienteBtn";
             this.agregarPacienteBtn.Size = new System.Drawing.Size(289, 46);
             this.agregarPacienteBtn.TabIndex = 7;
@@ -79,7 +81,7 @@
             // 
             this.eliminarPacienteBtn.BackColor = System.Drawing.Color.PaleTurquoise;
             this.eliminarPacienteBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.eliminarPacienteBtn.Location = new System.Drawing.Point(307, 497);
+            this.eliminarPacienteBtn.Location = new System.Drawing.Point(242, 544);
             this.eliminarPacienteBtn.Name = "eliminarPacienteBtn";
             this.eliminarPacienteBtn.Size = new System.Drawing.Size(289, 46);
             this.eliminarPacienteBtn.TabIndex = 8;
@@ -91,7 +93,7 @@
             // 
             this.updatePacienteBtn.BackColor = System.Drawing.Color.PaleTurquoise;
             this.updatePacienteBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.updatePacienteBtn.Location = new System.Drawing.Point(602, 497);
+            this.updatePacienteBtn.Location = new System.Drawing.Point(615, 544);
             this.updatePacienteBtn.Name = "updatePacienteBtn";
             this.updatePacienteBtn.Size = new System.Drawing.Size(289, 46);
             this.updatePacienteBtn.TabIndex = 9;
@@ -103,7 +105,7 @@
             // 
             this.backBtn.BackColor = System.Drawing.Color.LightCoral;
             this.backBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.backBtn.Location = new System.Drawing.Point(479, 567);
+            this.backBtn.Location = new System.Drawing.Point(797, 492);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(260, 46);
             this.backBtn.TabIndex = 11;
@@ -115,7 +117,7 @@
             // 
             this.clearBoxBtn.BackColor = System.Drawing.Color.PaleTurquoise;
             this.clearBoxBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.clearBoxBtn.Location = new System.Drawing.Point(198, 567);
+            this.clearBoxBtn.Location = new System.Drawing.Point(425, 492);
             this.clearBoxBtn.Name = "clearBoxBtn";
             this.clearBoxBtn.Size = new System.Drawing.Size(275, 46);
             this.clearBoxBtn.TabIndex = 10;
@@ -196,6 +198,7 @@
             // nameTb
             // 
             this.nameTb.Location = new System.Drawing.Point(12, 72);
+            this.nameTb.MaxLength = 20;
             this.nameTb.Name = "nameTb";
             this.nameTb.PlaceholderText = "Ingrese el nombre...";
             this.nameTb.Size = new System.Drawing.Size(216, 27);
@@ -204,6 +207,7 @@
             // lastTb
             // 
             this.lastTb.Location = new System.Drawing.Point(12, 131);
+            this.lastTb.MaxLength = 20;
             this.lastTb.Name = "lastTb";
             this.lastTb.PlaceholderText = "Ingrese el apellido...";
             this.lastTb.Size = new System.Drawing.Size(216, 27);
@@ -212,6 +216,7 @@
             // cedulaTb
             // 
             this.cedulaTb.Location = new System.Drawing.Point(12, 189);
+            this.cedulaTb.MaxLength = 20;
             this.cedulaTb.Name = "cedulaTb";
             this.cedulaTb.PlaceholderText = "Ingrese la cédula...";
             this.cedulaTb.Size = new System.Drawing.Size(216, 27);
@@ -220,6 +225,7 @@
             // emailTb
             // 
             this.emailTb.Location = new System.Drawing.Point(12, 252);
+            this.emailTb.MaxLength = 40;
             this.emailTb.Name = "emailTb";
             this.emailTb.PlaceholderText = "Ingrese el e-mail...";
             this.emailTb.Size = new System.Drawing.Size(216, 27);
@@ -236,6 +242,7 @@
             // telTb
             // 
             this.telTb.Location = new System.Drawing.Point(12, 370);
+            this.telTb.MaxLength = 24;
             this.telTb.Name = "telTb";
             this.telTb.PlaceholderText = "Ingrese el teléfono...";
             this.telTb.Size = new System.Drawing.Size(216, 27);
@@ -246,8 +253,8 @@
             this.tipoPacienteDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipoPacienteDropdown.FormattingEnabled = true;
             this.tipoPacienteDropdown.Items.AddRange(new object[] {
-            "Mayor de edad",
-            "Menor de edad"});
+            "Mayor",
+            "Menor"});
             this.tipoPacienteDropdown.Location = new System.Drawing.Point(12, 429);
             this.tipoPacienteDropdown.Name = "tipoPacienteDropdown";
             this.tipoPacienteDropdown.Size = new System.Drawing.Size(216, 28);
@@ -258,19 +265,39 @@
             this.dataGVPacientes.BackgroundColor = System.Drawing.Color.PaleTurquoise;
             this.dataGVPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGVPacientes.GridColor = System.Drawing.SystemColors.WindowFrame;
-            this.dataGVPacientes.Location = new System.Drawing.Point(270, 43);
+            this.dataGVPacientes.Location = new System.Drawing.Point(253, 12);
             this.dataGVPacientes.Name = "dataGVPacientes";
             this.dataGVPacientes.RowHeadersWidth = 51;
             this.dataGVPacientes.RowTemplate.Height = 29;
-            this.dataGVPacientes.Size = new System.Drawing.Size(621, 414);
+            this.dataGVPacientes.Size = new System.Drawing.Size(804, 465);
             this.dataGVPacientes.TabIndex = 26;
+            // 
+            // idLabel
+            // 
+            this.idLabel.AutoSize = true;
+            this.idLabel.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.idLabel.Location = new System.Drawing.Point(12, 554);
+            this.idLabel.Name = "idLabel";
+            this.idLabel.Size = new System.Drawing.Size(48, 26);
+            this.idLabel.TabIndex = 27;
+            this.idLabel.Text = "ID:";
+            // 
+            // idTb
+            // 
+            this.idTb.Location = new System.Drawing.Point(69, 555);
+            this.idTb.Name = "idTb";
+            this.idTb.PlaceholderText = "Ingrese el ID...";
+            this.idTb.Size = new System.Drawing.Size(125, 27);
+            this.idTb.TabIndex = 28;
             // 
             // PacientesMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.ClientSize = new System.Drawing.Size(933, 646);
+            this.ClientSize = new System.Drawing.Size(1069, 613);
+            this.Controls.Add(this.idTb);
+            this.Controls.Add(this.idLabel);
             this.Controls.Add(this.dataGVPacientes);
             this.Controls.Add(this.tipoPacienteDropdown);
             this.Controls.Add(this.telTb);
@@ -326,5 +353,7 @@
         private System.Windows.Forms.TextBox telTb;
         private System.Windows.Forms.ComboBox tipoPacienteDropdown;
         private System.Windows.Forms.DataGridView dataGVPacientes;
+        private System.Windows.Forms.Label idLabel;
+        private System.Windows.Forms.TextBox idTb;
     }
 }
