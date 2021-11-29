@@ -85,6 +85,7 @@
             this.dentistaBtn.TabIndex = 2;
             this.dentistaBtn.Text = "Dentistas";
             this.dentistaBtn.UseVisualStyleBackColor = false;
+            this.dentistaBtn.Click += new System.EventHandler(this.dentistaBtn_Click);
             // 
             // servicioBtn
             // 

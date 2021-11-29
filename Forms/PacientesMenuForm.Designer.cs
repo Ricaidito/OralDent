@@ -267,6 +267,7 @@
             this.dataGVPacientes.GridColor = System.Drawing.SystemColors.WindowFrame;
             this.dataGVPacientes.Location = new System.Drawing.Point(253, 12);
             this.dataGVPacientes.Name = "dataGVPacientes";
+            this.dataGVPacientes.ReadOnly = true;
             this.dataGVPacientes.RowHeadersWidth = 51;
             this.dataGVPacientes.RowTemplate.Height = 29;
             this.dataGVPacientes.Size = new System.Drawing.Size(804, 465);

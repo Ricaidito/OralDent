@@ -76,7 +76,7 @@ namespace OralDent.Forms
             }
 
             int id = (int) Convert.ToInt64(idTb.Text);
-            if (DBUtils.CheckIfPacienteExist(id))
+            if (DBUtils.CheckIfPacienteExists(id))
             {
                 DBUtils.DeletePaciente(id);
                 MessageBox.Show("Paciente elimiando!");
@@ -90,6 +90,7 @@ namespace OralDent.Forms
 
         private void updatePacienteBtn_Click(object sender, EventArgs e)
         {
+
             if (!CheckForNulls())
             {
                 int ageNumber, idNumber;
@@ -101,6 +102,12 @@ namespace OralDent.Forms
                 if (idTb.Text == string.Empty)
                 {
                     MessageBox.Show("ERROR: Ingrese un ID válido!");
+                    return;
+                }
+
+                if (!DBUtils.CheckIfPacienteExists(idNumber))
+                {
+                    MessageBox.Show("ERROR: El paciente no existe!");
                     return;
                 }
 

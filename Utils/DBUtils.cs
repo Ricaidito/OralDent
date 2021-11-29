@@ -7,13 +7,11 @@ namespace OralDent.Utils
     public static class DBUtils
     {
         // ConnectionString en App.config
-
         private static string cString = ConfigurationManager
             .ConnectionStrings["cString"]
             .ConnectionString;
 
         // Utilidades
-
         public static DataTable GetTable(string table)
         {
             DataTable dt = new DataTable();
@@ -93,8 +91,7 @@ namespace OralDent.Utils
         }
 
         // Paciente
-
-        public static bool CheckIfPacienteExist(int id)
+        public static bool CheckIfPacienteExists(int id)
         {
             using (var con = new SqlConnection(cString))
             {
@@ -203,6 +200,109 @@ namespace OralDent.Utils
                 }
             }
         }
+
+        // Dentista
+        public static bool CheckIfDentistaExists(int id)
+        {
+            using (var con = new SqlConnection(cString))
+            {
+
+                string query = "SELECT Nombre FROM Dentista WHERE IdDentista = @id;";
+
+                using (var cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("id", id);
+
+                    con.Open();
+
+                    SqlDataReader r = cmd.ExecuteReader();
+
+                    if (r.HasRows)
+                        return true;
+                    return false;
+                }
+
+            }
+        }
+
+        public static void AddDentista(
+            string name, 
+            string lastName, 
+            string phoneNumber, 
+            int salary, 
+            string especialidad
+            )
+        {
+            using (var con = new SqlConnection(cString))
+            {
+                string query = @"INSERT INTO 
+                    Dentista(Nombre, Apellido, Telefono, Salario, Especialidad) 
+                    VALUES(@name, @lastName, @tel, @sal, @especialidad);";
+
+                using (var cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("name", name);
+                    cmd.Parameters.AddWithValue("lastName", lastName);
+                    cmd.Parameters.AddWithValue("tel", phoneNumber);
+                    cmd.Parameters.AddWithValue("sal", salary);
+                    cmd.Parameters.AddWithValue("especialidad", especialidad);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void DeleteDentista(int id)
+        {
+            using (var con = new SqlConnection(cString))
+            {
+                string query = "DELETE FROM Dentista WHERE IdDentista = @id";
+
+                using (var cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("id", id);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void UpdateDentista(
+            int id,
+            string name,
+            string lastName,
+            string phone,
+            int salary,
+            string especialidad
+            )
+        {
+            using (var con = new SqlConnection(cString))
+            {
+                string query = @"UPDATE Dentista SET 
+                    Nombre = @name, 
+                    Apellido = @lastName, 
+                    Telefono = @tel, 
+                    Salario = @sal,
+                    Especialidad = @especialidad
+                    WHERE IdDentista = @id;";
+
+                using (var cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("id", id);
+                    cmd.Parameters.AddWithValue("name", name);
+                    cmd.Parameters.AddWithValue("lastName", lastName);
+                    cmd.Parameters.AddWithValue("tel", phone);
+                    cmd.Parameters.AddWithValue("sal", salary);
+                    cmd.Parameters.AddWithValue("especialidad", especialidad);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        // Consulta 
 
     }
 }
