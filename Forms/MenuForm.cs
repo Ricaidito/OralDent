@@ -8,6 +8,9 @@ namespace OralDent.Forms
         private PacientesMenuForm pMenuForm;
         private ConsultasMenuForm cMenuForm;
         private DentistaMenuForm dMenuForm;
+        private AsistenteMenuForm aMenuForm;
+        private ServiciosMenuForm sMenuForm;
+        private FacturaForm fForm;
 
         public MenuForm(string name, LoginForm login)
         {
@@ -33,6 +36,34 @@ namespace OralDent.Forms
             Hide();
             dMenuForm = new DentistaMenuForm(this);
             dMenuForm.Show();
+        }
+
+        private void asistBtn_Click(object sender, System.EventArgs e)
+        {
+            Hide();
+            aMenuForm = new AsistenteMenuForm(this);
+            aMenuForm.Show();
+        }
+
+        private void consultaBtn_Click(object sender, System.EventArgs e)
+        {
+            Hide();
+            cMenuForm = new ConsultasMenuForm(this);
+            cMenuForm.Show();
+        }
+
+        private void servicioBtn_Click(object sender, System.EventArgs e)
+        {
+            Hide();
+            sMenuForm = new ServiciosMenuForm(this);
+            sMenuForm.Show();
+        }
+
+        private void facturaBtn_Click(object sender, System.EventArgs e)
+        {
+            Hide();
+            fForm = new FacturaForm(this);
+            fForm.Show();
         }
     }
 }

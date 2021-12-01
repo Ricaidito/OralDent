@@ -97,6 +97,7 @@
             this.servicioBtn.TabIndex = 4;
             this.servicioBtn.Text = "Servicios";
             this.servicioBtn.UseVisualStyleBackColor = false;
+            this.servicioBtn.Click += new System.EventHandler(this.servicioBtn_Click);
             // 
             // facturaBtn
             // 
@@ -108,6 +109,7 @@
             this.facturaBtn.TabIndex = 5;
             this.facturaBtn.Text = "Generar factura";
             this.facturaBtn.UseVisualStyleBackColor = false;
+            this.facturaBtn.Click += new System.EventHandler(this.facturaBtn_Click);
             // 
             // consultaBtn
             // 
@@ -119,6 +121,7 @@
             this.consultaBtn.TabIndex = 0;
             this.consultaBtn.Text = "Consultas";
             this.consultaBtn.UseVisualStyleBackColor = false;
+            this.consultaBtn.Click += new System.EventHandler(this.consultaBtn_Click);
             // 
             // asistBtn
             // 
@@ -130,6 +133,7 @@
             this.asistBtn.TabIndex = 3;
             this.asistBtn.Text = "Asistentes";
             this.asistBtn.UseVisualStyleBackColor = false;
+            this.asistBtn.Click += new System.EventHandler(this.asistBtn_Click);
             // 
             // pictureBox1
             // 
