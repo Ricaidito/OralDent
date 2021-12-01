@@ -154,8 +154,11 @@
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.passLabel);
             this.Controls.Add(this.loginLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OralDent - Login";
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).EndInit();
             this.ResumeLayout(false);

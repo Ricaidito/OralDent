@@ -78,6 +78,7 @@
             // nameTb
             // 
             this.nameTb.Location = new System.Drawing.Point(12, 72);
+            this.nameTb.MaxLength = 20;
             this.nameTb.Name = "nameTb";
             this.nameTb.PlaceholderText = "Ingrese el nombre...";
             this.nameTb.Size = new System.Drawing.Size(188, 27);
@@ -96,6 +97,7 @@
             // lastTb
             // 
             this.lastTb.Location = new System.Drawing.Point(12, 131);
+            this.lastTb.MaxLength = 20;
             this.lastTb.Name = "lastTb";
             this.lastTb.PlaceholderText = "Ingrese el apellido...";
             this.lastTb.Size = new System.Drawing.Size(188, 27);
@@ -114,6 +116,7 @@
             // telTb
             // 
             this.telTb.Location = new System.Drawing.Point(12, 190);
+            this.telTb.MaxLength = 24;
             this.telTb.Name = "telTb";
             this.telTb.PlaceholderText = "Ingrese el teléfono...";
             this.telTb.Size = new System.Drawing.Size(188, 27);
@@ -307,8 +310,11 @@
             this.Controls.Add(this.nameTb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "AsistenteMenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OralDent - Asistente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AsistenteMenuForm_FormClosing);
             this.Load += new System.EventHandler(this.AsistenteMenuForm_Load);

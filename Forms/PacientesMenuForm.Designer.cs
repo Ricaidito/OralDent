@@ -320,8 +320,11 @@
             this.Controls.Add(this.eliminarPacienteBtn);
             this.Controls.Add(this.agregarPacienteBtn);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "PacientesMenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OralDent - Pacientes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PacientesMenuForm_FormClosing);
             this.Load += new System.EventHandler(this.PacientesMenuForm_Load);

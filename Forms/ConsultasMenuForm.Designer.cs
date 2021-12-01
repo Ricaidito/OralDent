@@ -317,8 +317,11 @@
             this.Controls.Add(this.consultasDGV);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ConsultasMenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OralDent - Consultas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsultasMenuForm_FormClosing);
             this.Load += new System.EventHandler(this.ConsultasMenuForm_Load);

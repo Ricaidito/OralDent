@@ -74,6 +74,7 @@
             // nameTb
             // 
             this.nameTb.Location = new System.Drawing.Point(12, 80);
+            this.nameTb.MaxLength = 20;
             this.nameTb.Name = "nameTb";
             this.nameTb.PlaceholderText = "Ingrese el nombre...";
             this.nameTb.Size = new System.Drawing.Size(231, 27);
@@ -92,6 +93,7 @@
             // lastTb
             // 
             this.lastTb.Location = new System.Drawing.Point(12, 139);
+            this.lastTb.MaxLength = 20;
             this.lastTb.Name = "lastTb";
             this.lastTb.PlaceholderText = "Ingrese el apellido...";
             this.lastTb.Size = new System.Drawing.Size(231, 27);
@@ -110,6 +112,7 @@
             // telTb
             // 
             this.telTb.Location = new System.Drawing.Point(12, 198);
+            this.telTb.MaxLength = 24;
             this.telTb.Name = "telTb";
             this.telTb.PlaceholderText = "Ingrese el teléfono...";
             this.telTb.Size = new System.Drawing.Size(231, 27);
@@ -276,8 +279,11 @@
             this.Controls.Add(this.nameTb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "DentistaMenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OralDent - Dentista";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DentistaMenuForm_FormClosing);
             this.Load += new System.EventHandler(this.DentistaMenuForm_Load);

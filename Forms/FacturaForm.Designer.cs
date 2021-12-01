@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturaForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.facturaDGV = new System.Windows.Forms.DataGridView();
@@ -130,8 +131,12 @@
             this.Controls.Add(this.facturaDGV);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FacturaForm";
-            this.Text = "FacturaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "OralDent - Factura";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FacturaForm_FormClosing);
             this.Load += new System.EventHandler(this.FacturaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.facturaDGV)).EndInit();

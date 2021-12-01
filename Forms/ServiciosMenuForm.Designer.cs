@@ -175,7 +175,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.ClientSize = new System.Drawing.Size(298, 457);
+            this.ClientSize = new System.Drawing.Size(349, 457);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.addBtn);
@@ -188,8 +188,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbTipoServicio);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ServiciosMenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OralDent - Servicios";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ServiciosMenuForm_FormClosing);
             this.ResumeLayout(false);
