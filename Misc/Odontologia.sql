@@ -75,7 +75,7 @@ CREATE TABLE Factura
 (
     IdFactura INT IDENTITY(1, 1) PRIMARY KEY,
     Total MONEY NOT NULL,
-    Fecha DATETIME NOT NULL
+    Fecha DATETIME NOT NULL,
     IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente) NOT NULL,
 );
 

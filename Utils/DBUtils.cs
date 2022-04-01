@@ -7,11 +7,8 @@ namespace OralDent.Utils
 {
     public static class DBUtils
     {
-        // ConnectionString en App.config
-        private static string cString = ConfigurationManager
-            .ConnectionStrings["cString"]
-            .ConnectionString;
-
+        // ConnectionString
+        private static string cString = "";
         // Utilidades
         public static DataTable GetTable(string table)
         {
