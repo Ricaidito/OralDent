@@ -362,14 +362,15 @@ namespace OralDent.Utils
             string lastName, 
             string phoneNumber, 
             int salary, 
-            string especialidad
+            string especialidad,
+            int idSucursal
             )
         {
             using (var con = new SqlConnection(cString))
             {
                 string query = @"INSERT INTO 
-                    Dentista(Nombre, Apellido, Telefono, Salario, Especialidad) 
-                    VALUES(@name, @lastName, @tel, @sal, @especialidad);";
+                    Dentista(Nombre, Apellido, Telefono, Salario, Especialidad, IdSucursal) 
+                    VALUES(@name, @lastName, @tel, @sal, @especialidad, @sucursal);";
 
                 using (var cmd = new SqlCommand(query, con))
                 {
@@ -378,6 +379,7 @@ namespace OralDent.Utils
                     cmd.Parameters.AddWithValue("tel", phoneNumber);
                     cmd.Parameters.AddWithValue("sal", salary);
                     cmd.Parameters.AddWithValue("especialidad", especialidad);
+                    cmd.Parameters.AddWithValue("sucursal", idSucursal);
 
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -407,7 +409,8 @@ namespace OralDent.Utils
             string lastName,
             string phone,
             int salary,
-            string especialidad
+            string especialidad,
+            int idSucursal
             )
         {
             using (var con = new SqlConnection(cString))
@@ -417,7 +420,8 @@ namespace OralDent.Utils
                     Apellido = @lastName, 
                     Telefono = @tel, 
                     Salario = @sal,
-                    Especialidad = @especialidad
+                    Especialidad = @especialidad,
+                    IdSucursal = @sucursal
                     WHERE IdDentista = @id;";
 
                 using (var cmd = new SqlCommand(query, con))
@@ -428,6 +432,7 @@ namespace OralDent.Utils
                     cmd.Parameters.AddWithValue("tel", phone);
                     cmd.Parameters.AddWithValue("sal", salary);
                     cmd.Parameters.AddWithValue("especialidad", especialidad);
+                    cmd.Parameters.AddWithValue("sucursal", idSucursal);
 
                     con.Open();
                     cmd.ExecuteNonQuery();

@@ -48,6 +48,9 @@
             this.backBtn = new System.Windows.Forms.Button();
             this.updateBtn = new System.Windows.Forms.Button();
             this.dtGVDentista = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.sucursalTb = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtGVDentista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,9 +58,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("JetBrains Mono", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(10, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 30);
+            this.label1.Size = new System.Drawing.Size(111, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Dentistas";
             // 
@@ -65,84 +68,88 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(12, 51);
+            this.label2.Location = new System.Drawing.Point(10, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 26);
+            this.label2.Size = new System.Drawing.Size(80, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre:";
             // 
             // nameTb
             // 
-            this.nameTb.Location = new System.Drawing.Point(12, 80);
+            this.nameTb.Location = new System.Drawing.Point(10, 60);
+            this.nameTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nameTb.MaxLength = 20;
             this.nameTb.Name = "nameTb";
             this.nameTb.PlaceholderText = "Ingrese el nombre...";
-            this.nameTb.Size = new System.Drawing.Size(231, 27);
+            this.nameTb.Size = new System.Drawing.Size(203, 23);
             this.nameTb.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(12, 110);
+            this.label3.Location = new System.Drawing.Point(10, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 26);
+            this.label3.Size = new System.Drawing.Size(100, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "Apellido:";
             // 
             // lastTb
             // 
-            this.lastTb.Location = new System.Drawing.Point(12, 139);
+            this.lastTb.Location = new System.Drawing.Point(10, 104);
+            this.lastTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lastTb.MaxLength = 20;
             this.lastTb.Name = "lastTb";
             this.lastTb.PlaceholderText = "Ingrese el apellido...";
-            this.lastTb.Size = new System.Drawing.Size(231, 27);
+            this.lastTb.Size = new System.Drawing.Size(203, 23);
             this.lastTb.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(12, 169);
+            this.label4.Location = new System.Drawing.Point(10, 127);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 26);
+            this.label4.Size = new System.Drawing.Size(100, 21);
             this.label4.TabIndex = 5;
             this.label4.Text = "Teléfono:";
             // 
             // telTb
             // 
-            this.telTb.Location = new System.Drawing.Point(12, 198);
+            this.telTb.Location = new System.Drawing.Point(10, 148);
+            this.telTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.telTb.MaxLength = 24;
             this.telTb.Name = "telTb";
             this.telTb.PlaceholderText = "Ingrese el teléfono...";
-            this.telTb.Size = new System.Drawing.Size(231, 27);
+            this.telTb.Size = new System.Drawing.Size(203, 23);
             this.telTb.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(12, 228);
+            this.label5.Location = new System.Drawing.Point(10, 171);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 26);
+            this.label5.Size = new System.Drawing.Size(90, 21);
             this.label5.TabIndex = 7;
             this.label5.Text = "Salario:";
             // 
             // moneyTb
             // 
-            this.moneyTb.Location = new System.Drawing.Point(12, 257);
+            this.moneyTb.Location = new System.Drawing.Point(10, 193);
+            this.moneyTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.moneyTb.Name = "moneyTb";
             this.moneyTb.PlaceholderText = "Ingrese el salario...";
-            this.moneyTb.Size = new System.Drawing.Size(231, 27);
+            this.moneyTb.Size = new System.Drawing.Size(203, 23);
             this.moneyTb.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(12, 287);
+            this.label6.Location = new System.Drawing.Point(9, 273);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(168, 26);
+            this.label6.Size = new System.Drawing.Size(140, 21);
             this.label6.TabIndex = 10;
             this.label6.Text = "Especialidad:";
             // 
@@ -158,36 +165,39 @@
             "Endodoncista",
             "Cirujano",
             "Prostodoncista"});
-            this.especialidadCb.Location = new System.Drawing.Point(12, 316);
+            this.especialidadCb.Location = new System.Drawing.Point(10, 296);
+            this.especialidadCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.especialidadCb.Name = "especialidadCb";
-            this.especialidadCb.Size = new System.Drawing.Size(231, 28);
+            this.especialidadCb.Size = new System.Drawing.Size(203, 23);
             this.especialidadCb.TabIndex = 11;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(36, 503);
+            this.label7.Location = new System.Drawing.Point(21, 432);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 26);
+            this.label7.Size = new System.Drawing.Size(40, 21);
             this.label7.TabIndex = 12;
             this.label7.Text = "ID:";
             // 
             // idTb
             // 
-            this.idTb.Location = new System.Drawing.Point(90, 503);
+            this.idTb.Location = new System.Drawing.Point(67, 430);
+            this.idTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.idTb.Name = "idTb";
             this.idTb.PlaceholderText = "Ingrese el ID...";
-            this.idTb.Size = new System.Drawing.Size(125, 27);
+            this.idTb.Size = new System.Drawing.Size(110, 23);
             this.idTb.TabIndex = 13;
             // 
             // addBtn
             // 
             this.addBtn.BackColor = System.Drawing.Color.PaleTurquoise;
             this.addBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.addBtn.Location = new System.Drawing.Point(12, 370);
+            this.addBtn.Location = new System.Drawing.Point(10, 337);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(231, 37);
+            this.addBtn.Size = new System.Drawing.Size(202, 28);
             this.addBtn.TabIndex = 14;
             this.addBtn.Text = "Agregar dentista";
             this.addBtn.UseVisualStyleBackColor = false;
@@ -197,9 +207,10 @@
             // 
             this.removeBtn.BackColor = System.Drawing.Color.PaleTurquoise;
             this.removeBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.removeBtn.Location = new System.Drawing.Point(253, 497);
+            this.removeBtn.Location = new System.Drawing.Point(197, 430);
+            this.removeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.removeBtn.Name = "removeBtn";
-            this.removeBtn.Size = new System.Drawing.Size(231, 37);
+            this.removeBtn.Size = new System.Drawing.Size(202, 28);
             this.removeBtn.TabIndex = 15;
             this.removeBtn.Text = "Eliminar dentista";
             this.removeBtn.UseVisualStyleBackColor = false;
@@ -209,9 +220,10 @@
             // 
             this.clearBtn.BackColor = System.Drawing.Color.PaleTurquoise;
             this.clearBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.clearBtn.Location = new System.Drawing.Point(12, 433);
+            this.clearBtn.Location = new System.Drawing.Point(10, 369);
+            this.clearBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Size = new System.Drawing.Size(231, 37);
+            this.clearBtn.Size = new System.Drawing.Size(202, 28);
             this.clearBtn.TabIndex = 16;
             this.clearBtn.Text = "Limpiar campos";
             this.clearBtn.UseVisualStyleBackColor = false;
@@ -221,9 +233,10 @@
             // 
             this.backBtn.BackColor = System.Drawing.Color.LightCoral;
             this.backBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.backBtn.Location = new System.Drawing.Point(816, 497);
+            this.backBtn.Location = new System.Drawing.Point(665, 430);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(231, 37);
+            this.backBtn.Size = new System.Drawing.Size(202, 28);
             this.backBtn.TabIndex = 17;
             this.backBtn.Text = "Volver al menú";
             this.backBtn.UseVisualStyleBackColor = false;
@@ -233,9 +246,10 @@
             // 
             this.updateBtn.BackColor = System.Drawing.Color.PaleTurquoise;
             this.updateBtn.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.updateBtn.Location = new System.Drawing.Point(528, 497);
+            this.updateBtn.Location = new System.Drawing.Point(428, 430);
+            this.updateBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(247, 37);
+            this.updateBtn.Size = new System.Drawing.Size(216, 28);
             this.updateBtn.TabIndex = 18;
             this.updateBtn.Text = "Modificar dentista";
             this.updateBtn.UseVisualStyleBackColor = false;
@@ -246,20 +260,51 @@
             this.dtGVDentista.BackgroundColor = System.Drawing.Color.PaleTurquoise;
             this.dtGVDentista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGVDentista.GridColor = System.Drawing.SystemColors.WindowFrame;
-            this.dtGVDentista.Location = new System.Drawing.Point(253, 12);
+            this.dtGVDentista.Location = new System.Drawing.Point(221, 9);
+            this.dtGVDentista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtGVDentista.Name = "dtGVDentista";
             this.dtGVDentista.ReadOnly = true;
             this.dtGVDentista.RowHeadersWidth = 51;
             this.dtGVDentista.RowTemplate.Height = 29;
-            this.dtGVDentista.Size = new System.Drawing.Size(794, 458);
+            this.dtGVDentista.Size = new System.Drawing.Size(695, 344);
             this.dtGVDentista.TabIndex = 19;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(21, 231);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 15);
+            this.label8.TabIndex = 20;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(10, 218);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(120, 21);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "IdSucursal:";
+            // 
+            // sucursalTb
+            // 
+            this.sucursalTb.Location = new System.Drawing.Point(9, 241);
+            this.sucursalTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.sucursalTb.Name = "sucursalTb";
+            this.sucursalTb.PlaceholderText = "Ingrese el id del sucursal...";
+            this.sucursalTb.Size = new System.Drawing.Size(203, 23);
+            this.sucursalTb.TabIndex = 22;
             // 
             // DentistaMenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.ClientSize = new System.Drawing.Size(1059, 546);
+            this.ClientSize = new System.Drawing.Size(927, 501);
+            this.Controls.Add(this.sucursalTb);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.dtGVDentista);
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.backBtn);
@@ -281,6 +326,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "DentistaMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -314,5 +360,8 @@
         private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.DataGridView dtGVDentista;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox sucursalTb;
     }
 }
