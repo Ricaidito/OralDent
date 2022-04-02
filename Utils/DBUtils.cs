@@ -691,20 +691,20 @@ namespace OralDent.Utils
             }
         }
 
-        public static void AddServicio(int money, string tipoServicio, int idPaciente, int idDentista)
+        public static void AddServicio(int money, DateTime fecha , int idPaciente, int idSucursal, int idDentista, string tipoServicio)
         {
             using (var con = new SqlConnection(cString))
             {
-                string query = @"INSERT INTO 
-                    Servicio(Monto, TipoServicio, IdPaciente, IdDentista) 
-                    VALUES(@monto, @tipoServ, @idP, @idD);";
+                string query = @"EXECUTE spGenerarServicio @monto, @fecha, @idP, @idS, @idD,@tipoServ;";
 
                 using (var cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("monto", money);
-                    cmd.Parameters.AddWithValue("tipoServ", tipoServicio);
+                    cmd.Parameters.AddWithValue("fecha", fecha);
                     cmd.Parameters.AddWithValue("idP", idPaciente);
+                    cmd.Parameters.AddWithValue("idS", idSucursal);
                     cmd.Parameters.AddWithValue("idD", idDentista);
+                    cmd.Parameters.AddWithValue("tipoServ", tipoServicio);
 
                     con.Open();
                     cmd.ExecuteNonQuery();
