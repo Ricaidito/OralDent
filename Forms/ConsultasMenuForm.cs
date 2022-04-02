@@ -43,19 +43,22 @@ namespace OralDent.Forms
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            int idPaciente, idDentista;
+            int idPaciente, idDentista, idSucursal;
             bool result1 = int.TryParse(idPacienteTb.Text, out idPaciente);
             bool result2 = int.TryParse(idDentTb.Text, out idDentista);
+            bool result3 = int.TryParse(idSucTb.Text, out idSucursal);
 
             if (
                 !CheckForNulls() &&
                 DBUtils.CheckIfDentistaExists(idDentista) &&
                 DBUtils.CheckIfPacienteExists(idPaciente) &&
+                DBUtils.CheckIfSucursalExist(idSucursal) &&
                 result1 &&
-                result2
+                result2 &&
+                result3
                 )
             {
-                DBUtils.AddConsulta(dateTb.Value, descTb.Text, idDentista, idPaciente);
+                DBUtils.AddConsulta(dateTb.Value, descTb.Text, idDentista, idPaciente, idSucursal);
                 MessageBox.Show("Consulta agregada!");
                 RefreshTable();
             }
@@ -94,19 +97,21 @@ namespace OralDent.Forms
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            int idDentista, idPaciente, idConsulta;
+            int idDentista, idPaciente, idConsulta, idSucursal;
             bool result1 = int.TryParse(idDentTb.Text, out idDentista);
             bool result2 = int.TryParse(idPacienteTb.Text, out idPaciente);
             bool result3 = int.TryParse(idConsultaTb.Text, out idConsulta);
-            if (result1 && result2 && result3) 
+            bool result4 = int.TryParse(idSucTb.Text, out idSucursal);
+            if (result1 && result2 && result3 && result4) 
             {
                 if (
                     DBUtils.CheckIfDentistaExists(idDentista) 
                     && DBUtils.CheckIfConsultaExists(idConsulta) 
                     && DBUtils.CheckIfDentistaExists(idDentista)
+                    && DBUtils.CheckIfSucursalExist(idSucursal)
                     )
                 {
-                    DBUtils.UpdateConsulta(idConsulta, dateTb.Value, descTb.Text, idDentista, idPaciente);
+                    DBUtils.UpdateConsulta(idConsulta, dateTb.Value, descTb.Text, idDentista, idPaciente, idSucursal);
                     MessageBox.Show("Consulta actualizada!");
                     RefreshTable();
                     ClearBoxes();
@@ -133,5 +138,20 @@ namespace OralDent.Forms
             idConsultaTb.Clear();
         }
         private bool CheckForNulls() => idPacienteTb.Text == string.Empty || idDentTb.Text == string.Empty;
+
+        private void dateTb_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
