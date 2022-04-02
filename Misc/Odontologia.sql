@@ -4,6 +4,8 @@
 --Creación de la base de datos
 CREATE DATABASE Odontologia;
 USE Odontologia;
+DROP DATABASE Odontologia;
+USE master
 
 --Creación de las tablas
 
@@ -20,6 +22,23 @@ INSERT INTO Usuarios(Usuario, Clave, Nombre) VALUES -- Creación de usuarios
 ('ReniD', '12345', 'Reni'),
 ('AbdelM', '12345', 'Abdel'),
 ('WilsonC', '12345', 'Wilson');
+
+CREATE TABLE Sucursal
+(
+	IdSucursal INT IDENTITY(1,1) PRIMARY KEY,
+	NombreSucursal VARCHAR(100),
+	Direccion VARCHAR(100),
+	Ciudad VARCHAR(100),
+	Provincia VARCHAR(100),
+);
+
+INSERT INTO Sucursal VALUES ('Sucursal Churchill', 'Av. Winston Churchll', 'Distrito Nacional', 'Santo Domingo'),
+('Sucursal Gazcue', 'Av. Independencia', 'Distrito Nacional', 'Santo Domingo'),
+('Sucursal Piantnni', 'Av. Abrham Lincoln', 'Distrito Nacional', 'Santo Domingo'),
+('Sucursal Villa Mella', 'Calle Yuma', 'Distrito Nacional', 'Santo Domingo'),
+('Sucursal Alma Rosa II', 'Calle El Lider', 'Santo Domingo Este', 'Santo Domingo');
+
+
 
 CREATE TABLE Paciente
 (
@@ -40,7 +59,8 @@ CREATE TABLE Dentista
     Apellido VARCHAR(20) NOT NULL,
     Telefono VARCHAR(24) NOT NULL,
     Salario MONEY NOT NULL,
-    Especialidad VARCHAR(40) NOT NULL
+    Especialidad VARCHAR(40) NOT NULL,
+	IdSucursal INT FOREIGN KEY REFERENCES Sucursal(IdSucursal)
 );
 
 CREATE TABLE Asistente 
@@ -50,7 +70,7 @@ CREATE TABLE Asistente
     Apellido VARCHAR(20) NOT NULL,
     Telefono VARCHAR(24) NOT NULL,
     Salario MONEY NOT NULL,
-    IdDentista INT FOREIGN KEY REFERENCES Dentista(IdDentista)
+    IdDentista INT FOREIGN KEY REFERENCES Dentista(IdDentista),
 );
 
 CREATE TABLE Consulta
@@ -59,7 +79,8 @@ CREATE TABLE Consulta
     Fecha DATETIME NOT NULL,
     Descripcion VARCHAR(255),
     IdDentista INT FOREIGN KEY REFERENCES Dentista(IdDentista),
-    IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente) NOT NULL
+    IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente) NOT NULL,
+	IdSucursal INT FOREIGN KEY REFERENCES Sucursal(IdSucursal)
 );
 
 CREATE TABLE Servicio
@@ -68,7 +89,8 @@ CREATE TABLE Servicio
     Monto MONEY NOT NULL,
     TipoServicio VARCHAR(60),
     IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente) NOT NULL,
-    IdDentista INT FOREIGN KEY REFERENCES Dentista(IdDentista) NOT NULL
+    IdDentista INT FOREIGN KEY REFERENCES Dentista(IdDentista) NOT NULL,
+	IdSucursal INT FOREIGN KEY REFERENCES Sucursal(IdSucursal)
 );
 
 CREATE TABLE Factura 
@@ -77,13 +99,14 @@ CREATE TABLE Factura
     Total MONEY NOT NULL,
     Fecha DATETIME NOT NULL,
     IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente) NOT NULL,
+	IdSucursal INT FOREIGN KEY REFERENCES Sucursal(IdSucursal)
 );
 
 --Creación del stored procedure para facturarle a un cliente
 
-CREATE PROCEDURE spGenerarFactura @Total MONEY, @Fecha DATETIME, @IdPaciente INT
+CREATE PROCEDURE spGenerarFactura @Total MONEY, @Fecha DATETIME, @IdPaciente INT, @IdSucursal INT
 AS
-    INSERT INTO Factura(Total, Fecha, IdPaciente) VALUES(@Total, @Fecha, @IdPaciente);
+    INSERT INTO Factura(Total, Fecha, IdPaciente, IdSucursal) VALUES(@Total, @Fecha, @IdPaciente, @IdSucursal);
     DELETE FROM Servicio WHERE IdPaciente = @IdPaciente;
 GO
 
