@@ -6,7 +6,7 @@ namespace OralDent
 {
     internal static class Program
     {
-        private static bool debugMode = false;
+        private static bool debugMode = true;
 
         [STAThread]
         static void Main()

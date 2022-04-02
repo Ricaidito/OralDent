@@ -7,8 +7,9 @@ namespace OralDent.Utils
 {
     public static class DBUtils
     {
+        //Data Source = server; Database = db; Integrated Security = true;
         // ConnectionString
-        private static string cString = "";
+        private static string cString = "Data Source = .; Database = Odontologia; Integrated Security = true;";
         // Utilidades
         public static DataTable GetTable(string table)
         {
@@ -205,6 +206,29 @@ namespace OralDent.Utils
             {
 
                 string query = "SELECT Nombre FROM Paciente WHERE IdPaciente = @id;";
+
+                using (var cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("id", id);
+
+                    con.Open();
+
+                    SqlDataReader r = cmd.ExecuteReader();
+
+                    if (r.HasRows)
+                        return true;
+                    return false;
+                }
+
+            }
+        }
+
+        public static bool CheckIfSucursalExist(int id)
+        {
+            using (var con = new SqlConnection(cString))
+            {
+
+                string query = "SELECT NombreSucursal FROM Sucursal WHERE IdSucursal = @id;";
 
                 using (var cmd = new SqlCommand(query, con))
                 {
@@ -551,13 +575,13 @@ namespace OralDent.Utils
             }
         }
 
-        public static void AddConsulta(DateTime date, string desc, int idDentista, int idPaciente)
+        public static void AddConsulta(DateTime date, string desc, int idDentista, int idPaciente, int idSucursal)
         {
             using (var con = new SqlConnection(cString))
             {
                 string query = @"INSERT INTO 
-                    Consulta(Fecha, Descripcion, IdPaciente, IdDentista) 
-                    VALUES(@date, @desc, @idP, @idD);";
+                    Consulta(Fecha, Descripcion, IdPaciente, IdDentista, idSucursal) 
+                    VALUES(@date, @desc, @idP, @idD, @idS);";
 
                 using (var cmd = new SqlCommand(query, con))
                 {
@@ -565,6 +589,7 @@ namespace OralDent.Utils
                     cmd.Parameters.AddWithValue("desc", desc);
                     cmd.Parameters.AddWithValue("idP", idPaciente);
                     cmd.Parameters.AddWithValue("idD", idDentista);
+                    cmd.Parameters.AddWithValue("idS", idSucursal);
 
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -587,7 +612,7 @@ namespace OralDent.Utils
             }
         }
 
-        public static void UpdateConsulta(int id, DateTime date, string desc, int idDentista, int idPaciente)
+        public static void UpdateConsulta(int id, DateTime date, string desc, int idDentista, int idPaciente, int idSucursal)
         {
             using (var con = new SqlConnection(cString))
             {
@@ -595,7 +620,8 @@ namespace OralDent.Utils
                     Fecha = @date, 
                     Descripcion = @desc, 
                     IdPaciente = @idP,
-                    IdDentista = @idD
+                    IdDentista = @idD,
+                    IdSucursal = @idS
                     WHERE IdConsulta = @id;";
 
                 using (var cmd = new SqlCommand(query, con))
@@ -604,6 +630,7 @@ namespace OralDent.Utils
                     cmd.Parameters.AddWithValue("desc", desc);
                     cmd.Parameters.AddWithValue("idP", idPaciente);
                     cmd.Parameters.AddWithValue("idD", idDentista);
+                    cmd.Parameters.AddWithValue("idS", idSucursal);
                     cmd.Parameters.AddWithValue("id", id);
 
                     con.Open();
