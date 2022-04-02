@@ -33,6 +33,7 @@ namespace OralDent.Forms
             moneyTb.Clear();
             especialidadCb.SelectedIndex = -1;
             idTb.Clear();
+            sucursalTb.Clear();
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -40,17 +41,21 @@ namespace OralDent.Forms
             if (!CheckForNulls())
             {
                 int salaryNumber;
+                int idSucursal;
                 string salary = moneyTb.Text;
+                string sucursal = sucursalTb.Text;
                 bool tryParse = int.TryParse(salary, out salaryNumber);
+                bool tryParseSucursal = int.TryParse(sucursal, out idSucursal);
 
-                if (tryParse)
+                if (tryParse && tryParseSucursal)
                 {
                     DBUtils.AddDentista(
                         nameTb.Text,
                         lastTb.Text,
                         telTb.Text,
                         salaryNumber,
-                        especialidadCb.Text
+                        especialidadCb.Text,
+                        idSucursal
                         );
                     ClearBoxes();
                     RefreshTable();
@@ -87,11 +92,13 @@ namespace OralDent.Forms
         {
             if (!CheckForNulls())
             {
-                int salaryNumber, idNumber;
+                int salaryNumber, idNumber, idSucursal;
                 string salary = moneyTb.Text;
                 string id = idTb.Text;
+                string sucursal = sucursalTb.Text;
                 bool salaryResult = int.TryParse(salary, out salaryNumber);
                 bool idResult = int.TryParse(id, out idNumber);
+                bool sucursalResult = int.TryParse(sucursal, out idSucursal);
 
                 if (idTb.Text == string.Empty)
                 {
@@ -105,7 +112,7 @@ namespace OralDent.Forms
                     return;
                 }
 
-                if (idResult && salaryResult)
+                if (idResult && salaryResult && sucursalResult)
                 {
                     DBUtils.UpdateDentista(
                         idNumber,
@@ -113,7 +120,8 @@ namespace OralDent.Forms
                         lastTb.Text,
                         telTb.Text,
                         salaryNumber,
-                        especialidadCb.Text
+                        especialidadCb.Text,
+                        idSucursal
                         );
                     ClearBoxes();
                     RefreshTable();
@@ -135,6 +143,7 @@ namespace OralDent.Forms
                 || lastTb.Text == string.Empty
                 || telTb.Text == string.Empty
                 || moneyTb.Text == string.Empty
+                || sucursalTb.Text == string.Empty
                 );
         }
 
@@ -151,6 +160,7 @@ namespace OralDent.Forms
             telTb.Clear();
             especialidadCb.SelectedIndex = -1;
             idTb.Clear();
+            sucursalTb.Clear();
         }
 
         private void DentistaMenuForm_Load(object sender, EventArgs e)
