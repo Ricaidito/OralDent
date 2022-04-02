@@ -93,6 +93,18 @@ CREATE TABLE Servicio
 	IdSucursal INT FOREIGN KEY REFERENCES Sucursal(IdSucursal)
 );
 
+DROP TABLE ServiciosLog
+
+CREATE TABLE ServiciosLog
+(
+	IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente) NOT NULL,
+	IdSucursal INT FOREIGN KEY REFERENCES Sucursal(IdSucursal),
+	IdDentista INT FOREIGN KEY REFERENCES Dentista(IdDentista) NOT NULL,
+	Monto MONEY,
+	TipoServicio VARCHAR(60),
+	Fecha DATETIME NOT NULL
+);
+
 CREATE TABLE Factura 
 (
     IdFactura INT IDENTITY(1, 1) PRIMARY KEY,
@@ -110,8 +122,15 @@ AS
     DELETE FROM Servicio WHERE IdPaciente = @IdPaciente;
 GO
 
+CREATE PROCEDURE spGenerarServicio @Monto MONEY, @Fecha DATETIME, @IdPaciente INT, @IdSucursal INT, @IdDentista INT, @TipoServicio VARCHAR(60)
+AS
+    INSERT INTO Servicio(Monto, Fecha, IdPaciente,IdSucursal, IdDentista,TipoServicio) VALUES(@Monto, @Fecha, @IdPaciente, @IdSucursal,@IdDentista,@TipoServicio);
+	INSERT INTO ServiciosLog(Monto, Fecha, IdPaciente,IdSucursal, IdDentista,TipoServicio) VALUES(@Monto, @Fecha, @IdPaciente, @IdSucursal,@IdDentista, @TipoServicio);
+GO
+
 --Prueba del stored procedure
 EXECUTE spGenerarFactura 60000, '1996 Apr 15', 13;
+EXECUTE spGenerarServicio 60000, '1996 Apr 15', 1,1,1,'Limpieza';
 
 --Query ejemplo para calcular el total de todos los servicios de un paciente
 SELECT SUM(Monto) as Total FROM Servicio WHERE IdPaciente = 13;

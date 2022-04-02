@@ -18,13 +18,14 @@ namespace OralDent.Forms
         {
             if (!CheckForNulls())
             {
-                int idDentista, idPaciente;
+                int idDentista, idPaciente, idSucursal;
                 bool result1 = int.TryParse(idDTb.Text, out idDentista);
                 bool result2 = int.TryParse(idPTb.Text, out idPaciente);
-                if (DBUtils.CheckIfPacienteExists(idPaciente) && DBUtils.CheckIfDentistaExists(idDentista) 
-                    && result1 && result2)
+                bool result3 = int.TryParse(idSucursalTB.Text, out idSucursal);
+                if (DBUtils.CheckIfPacienteExists(idPaciente) && DBUtils.CheckIfDentistaExists(idDentista) && DBUtils.CheckIfSucursalExist(idSucursal)
+                    && result1 && result2 && result3)
                 {
-                    DBUtils.AddServicio(int.Parse(montoTb.Text), cbTipoServicio.Text, idPaciente, idDentista);
+                    DBUtils.AddServicio(int.Parse(montoTb.Text), DateTime.Now, idPaciente, idSucursal, idDentista, cbTipoServicio.Text);
                     MessageBox.Show("Servicio registrado!");
                 }
                 else
