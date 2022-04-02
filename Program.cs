@@ -1,12 +1,12 @@
+using OralDent.Forms;
 using System;
 using System.Windows.Forms;
-using OralDent.Forms;
 
 namespace OralDent
 {
     internal static class Program
     {
-        private static bool debugMode = true;
+        private static bool debugMode = false;
 
         [STAThread]
         static void Main()

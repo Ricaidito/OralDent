@@ -1,6 +1,6 @@
-﻿using System;
+﻿using OralDent.Utils;
+using System;
 using System.Windows.Forms;
-using OralDent.Utils;
 
 namespace OralDent.Forms
 {
@@ -20,7 +20,7 @@ namespace OralDent.Forms
             {
                 if (DBUtils.CheckIfPacienteHasService(int.Parse(idPacienteTb.Text)))
                 {
-                    var factura = new Factura(int.Parse(idPacienteTb.Text));
+                    var factura = new Factura(int.Parse(idPacienteTb.Text), int.Parse(idSucursalTb.Text));
                     DBUtils.GenerarFactura(factura);
                     RefreshTables();
                     MessageBox.Show(factura.ToString());

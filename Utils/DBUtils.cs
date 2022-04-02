@@ -1,14 +1,13 @@
-﻿using System.Configuration;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System;
 
 namespace OralDent.Utils
 {
     public static class DBUtils
     {
-        //Data Source = server; Database = db; Integrated Security = true;
         // ConnectionString
+        //private static string cString = "Data Source = RICARDOPC\\SQLEXPRESS; Database = Odontologia; Integrated Security = true;";
         private static string cString = "Data Source = .; Database = Odontologia; Integrated Security = true;";
         // Utilidades
         public static DataTable GetTable(string table)
@@ -144,12 +143,12 @@ namespace OralDent.Utils
         {
             bool check = false;
 
-            using(var con = new SqlConnection(cString))
+            using (var con = new SqlConnection(cString))
             {
 
                 string query = "SELECT Usuario, Clave from Usuarios WHERE Usuario = @user AND Clave = @pass;";
 
-                using(var cmd = new SqlCommand(query, con))
+                using (var cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("user", user);
                     cmd.Parameters.AddWithValue("pass", pass);
@@ -185,7 +184,7 @@ namespace OralDent.Utils
                 using (var cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("user", user);
-                    
+
                     con.Open();
 
                     SqlDataReader r = cmd.ExecuteReader();
@@ -247,22 +246,22 @@ namespace OralDent.Utils
         }
 
         public static void AddPaciente(
-            string name, 
-            string lastName, 
-            string cedula, 
-            string email, 
-            int age, 
-            string phone, 
+            string name,
+            string lastName,
+            string cedula,
+            string email,
+            int age,
+            string phone,
             string tipoPaciente
             )
         {
-            using(var con = new SqlConnection(cString))
+            using (var con = new SqlConnection(cString))
             {
                 string query = @"INSERT INTO 
                     Paciente(Nombre, Apellido, Cedula, Correo, Edad, Telefono, TipoPaciente) 
                     VALUES(@name, @lastName, @cedula, @correo, @edad, @telefono, @tipoPaciente);";
 
-                using (var cmd = new SqlCommand(query, con)) 
+                using (var cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("name", name);
                     cmd.Parameters.AddWithValue("lastName", lastName);
@@ -316,7 +315,7 @@ namespace OralDent.Utils
                     TipoPaciente = @tipoPaciente 
                     WHERE IdPaciente = @id;";
 
-                using(var cmd = new SqlCommand(query, con))
+                using (var cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("id", id);
                     cmd.Parameters.AddWithValue("name", name);
@@ -358,10 +357,10 @@ namespace OralDent.Utils
         }
 
         public static void AddDentista(
-            string name, 
-            string lastName, 
-            string phoneNumber, 
-            int salary, 
+            string name,
+            string lastName,
+            string phoneNumber,
+            int salary,
             string especialidad,
             int idSucursal
             )
@@ -691,7 +690,7 @@ namespace OralDent.Utils
             }
         }
 
-        public static void AddServicio(int money, DateTime fecha , int idPaciente, int idSucursal, int idDentista, string tipoServicio)
+        public static void AddServicio(int money, DateTime fecha, int idPaciente, int idSucursal, int idDentista, string tipoServicio)
         {
             using (var con = new SqlConnection(cString))
             {
@@ -717,13 +716,14 @@ namespace OralDent.Utils
         {
             using (var con = new SqlConnection(cString))
             {
-                string query = $"EXECUTE spGenerarFactura @monto, @fecha, @id;";
+                string query = $"EXECUTE spGenerarFactura @monto, @fecha, @idPaciente, @idSucursal;";
 
                 using (var cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("monto", factura.montoTotal);
                     cmd.Parameters.AddWithValue("fecha", factura.fecha);
-                    cmd.Parameters.AddWithValue("id", factura.idPaciente);
+                    cmd.Parameters.AddWithValue("idPaciente", factura.idPaciente);
+                    cmd.Parameters.AddWithValue("idSucursal", factura.idSucursal);
 
                     con.Open();
                     cmd.ExecuteNonQuery();
